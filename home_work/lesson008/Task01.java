@@ -6,7 +6,7 @@ public class Task01 {
     public static void main(String[] args) {
         Count count01 = new Count("Class01");
         count01.print();
-        count01.sub(50);
+        count01.sub(55);
         count01.print();
         count01.add(2);
         count01.print();
