@@ -15,12 +15,13 @@ package home_work.lesson012.com.walking.counterAggregation;
  */
 public class Main {
     public static void main(String[] args) {
-        Counter evenCounter = new Counter(Counter.GAS);
-        Counter oddCounter = new Counter(Counter.COLD_WATER);
+        Counter gas = new Counter(Counter.GAS);
+        Counter cWater = new Counter(Counter.COLD_WATER);
+        Counter electricity = new Counter(Counter.ELECTRICITY, 657);
 
-
-        evenCounter.printCounterValue();
-        oddCounter.printCounterValue();
+        gas.printCounter();
+        cWater.printCounter();
+        electricity.printCounter();
     }
 
 }

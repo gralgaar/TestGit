@@ -27,22 +27,22 @@ public class Counter {
         return counter;
     }
 
-    public void printCounterValue() {
-        System.out.printf("serial number: %d       TYPE:%s_%d\n", this.serialNumber, this.getTypeCounter(), this.counter);
+    public void printCounter() {
+        System.out.printf("serial number: %06d       TYPE:%s %5d\n", this.serialNumber, this.getTypeCounter(), this.counter);
     }
 
     public String getTypeCounter() {
         switch (this.type) {
             case 0:
-                return "GAS________";
+                return "GAS        ";
             case 1:
-                return "COLD_WATER_";
+                return "COLD_WATER ";
             case 2:
-                return "HOT_WATER__";
+                return "HOT_WATER  ";
             case 3:
                 return "ELECTRICITY";
             default:
-                return "ERROR______";
+                return "ERROR      ";
         }
     }
 }
