@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Task01 {
     public static String VERTICAL_LINES_UNIT = "||";
-    public static String HORIZONTAL_LINES_UNIT = "==";
+    public static String HORIZONTAL_LINES_UNIT = "=+";
     public static String SPACE_LINES_UNIT = "  ";
 
 
