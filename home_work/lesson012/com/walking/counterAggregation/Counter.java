@@ -1,48 +1,39 @@
 package home_work.lesson012.com.walking.counterAggregation;
 
 public class Counter {
-    public final static int GAS = 0;
-    public final static int COLD_WATER = 1;
-    public final static int HOT_WATER = 2;
-    public final static int ELECTRICITY = 3;
 
-    private static int serialCount = 0;
 
-    private int serialNumber;
+    private final int serialNumber;
     private int type;
-    private int counter;
+    private int indication;
 
-    public Counter(int type) {
-        this(type, 0);
+
+    public Counter(int type, int serialNumber) {
+        this(type, serialNumber, 0);
     }
 
-    public Counter(int type, int counter) {
-        this.serialNumber = serialCount++;
-        this.counter = counter;
-        this.type = type;
-    }
-
-    public int increase(int value) {
-        counter += value;
-        return counter;
+    public Counter(int type, int serialNumber, int indication) {
+        this.serialNumber = serialNumber;
+        this.indication = indication;
+        if ((type >= 0) || (type < 4)) this.type = type;
+        else System.out.println("\n ERROR");
     }
 
     public void printCounter() {
-        System.out.printf("serial number: %06d       TYPE:%s %5d\n", this.serialNumber, this.getTypeCounter(), this.counter);
+        System.out.printf("serial number: %06d       TYPE:%s %5d\n", this.serialNumber, this.getTypeCounter(), this.indication);
+    }
+
+    public void increase(int value) {
+        this.indication += value;
     }
 
     public String getTypeCounter() {
-        switch (this.type) {
-            case 0:
-                return "GAS        ";
-            case 1:
-                return "COLD_WATER ";
-            case 2:
-                return "HOT_WATER  ";
-            case 3:
-                return "ELECTRICITY";
-            default:
-                return "ERROR      ";
-        }
+        return switch (this.type) {
+            case 0 -> "GAS        ";
+            case 1 -> "COLD_WATER ";
+            case 2 -> "HOT_WATER  ";
+            case 3 -> "ELECTRICITY";
+            default -> "ERROR      ";
+        };
     }
 }

@@ -15,13 +15,20 @@ package home_work.lesson012.com.walking.counterAggregation;
  */
 public class Main {
     public static void main(String[] args) {
-        Counter gas = new Counter(Counter.GAS);
-        Counter cWater = new Counter(Counter.COLD_WATER);
-        Counter electricity = new Counter(Counter.ELECTRICITY, 657);
+        //создаём класс, который управляет счётчиками
+        CounterService service = new CounterService();
 
-        gas.printCounter();
-        cWater.printCounter();
-        electricity.printCounter();
+        //создаём внутри этого класса счётчики
+        service.create(CounterService.GAS);
+        service.create(CounterService.COLD_WATER);
+        service.create(CounterService.ELECTRICITY, 456);
+        service.create(7, 657);
+
+
+        service.printCounter(0);
+        service.printCounter(1);
+        service.printCounter(2);
+        service.printCounter(3);
     }
 
 }
