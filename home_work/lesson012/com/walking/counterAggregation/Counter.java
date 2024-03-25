@@ -3,10 +3,9 @@ package home_work.lesson012.com.walking.counterAggregation;
 public class Counter {
 
 
-    private final int serialNumber;
+    private int serialNumber;
     private int type;
     private int indication;
-
 
     public Counter(int type, int serialNumber) {
         this(type, serialNumber, 0);
