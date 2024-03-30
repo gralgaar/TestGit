@@ -41,7 +41,7 @@ public class Main {
         }
 
         if (check == false) {
-            System.out.print(Response.UNKNOWN.getAnswer());
+            System.out.print("UNKNOWN");
         }
     }
 
