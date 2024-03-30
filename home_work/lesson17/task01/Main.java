@@ -1,5 +1,6 @@
 package home_work.lesson17.task01;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -26,25 +27,23 @@ public class Main {
 //        Зачем - разберемся, когда будем изучать I/O Streams
         scanner.close();
 
-//        Используем конструкцию switch-case для переменной s
-        switch (s) {
-            case "Hi":  // Если s равно "Hi"
-//                Выводим в консоль "Hello"
-                System.out.println("Hello");
-//                Вызываем оператор break, чтобы выйти из switch-case
-                break;
+        Response[] values = Response.values();
 
-            case "Bye":
-                System.out.println("Good bye");
-                break;
+        boolean check = false;
+        for (Response val : values) {
 
-            case "How are you":
-                System.out.println("How are your doing");
-                break;
 
-            default:  // Если значение s не совпадает ни с одним кейсом
-                System.out.println("Unknown message");
+            if (Objects.equals(val.getGreeting(), s)) {
+                System.out.print(val.getAnswer());
+                check = true;
+                break;
+            }
+        }
+
+        if (check == false) {
+            System.out.print(Response.UNKNOWN.getAnswer());
         }
     }
+
 }
 
