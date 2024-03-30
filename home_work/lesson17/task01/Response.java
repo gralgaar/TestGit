@@ -7,8 +7,8 @@ enum Response {
     HOW("How are you", "How are your doing"),
     UNKNOWN("", "Unknown message");
 
-    private String greeting;
-    private String answer;
+    private final String greeting;
+    private final String answer;
 
 
     Response(String greeting, String answer) {
