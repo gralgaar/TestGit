@@ -40,7 +40,7 @@ public class Main {
             }
         }
 
-        if (check == false) {
+        if (!check) {
             System.out.print("UNKNOWN");
         }
     }
