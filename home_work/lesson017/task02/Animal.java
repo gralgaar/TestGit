@@ -5,7 +5,7 @@ public enum Animal {
     COW("MUUUUUUUUU"),
     DOG("BARK!!!");
 
-    String sound;
+    final String sound;
 
     Animal(String sound) {
         this.sound = sound;
