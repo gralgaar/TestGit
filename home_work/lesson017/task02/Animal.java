@@ -1,4 +1,4 @@
-package home_work.lesson017.task02.model;
+package home_work.lesson017.task02;
 
 public enum Animal {
     CAT("meow"),
