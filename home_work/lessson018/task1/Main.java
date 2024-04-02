@@ -41,19 +41,14 @@ public class Main {
 
     //    Используя поле класса Animal, определяем, какой настоящий класс обрабатываемого объекта
     private static void sound(Animal animal) {
-        switch (animal.getClassName()) {
-            case Cat.CAT_CLASS_NAME:
-                ((Cat) animal).meow();
-                break;
-            case Dog.DOG_CLASS_NAME:
-                ((Dog) animal).woof();
-                break;
-            case Cow.COW_CLASS_NAME:
-                ((Cow) animal).moo();
-                break;
-            default: //На случай, если был создан объект Animal, а не наследника.
+        switch (animal) {
+            case Cat cat -> cat.meow();
+            case Cow cow -> cow.moo();
+            case Dog dog -> dog.woof();
+            case null, default ->
+                //На случай, если был создан объект Animal, а не наследника.
                 // Или если наследник неизвестен
-                System.out.println("Unknown animal!");
+                    System.out.println("Unknown animal!");
         }
     }
 
