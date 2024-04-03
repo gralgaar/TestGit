@@ -1,9 +1,9 @@
-package home_work.lessson018.task2;
+package home_work.lesson018.task1;
 
-import home_work.lessson018.task2.model.Animal;
-import home_work.lessson018.task2.model.Cat;
-import home_work.lessson018.task2.model.Cow;
-import home_work.lessson018.task2.model.Dog;
+import home_work.lesson018.task1.model.Animal;
+import home_work.lesson018.task1.model.Cat;
+import home_work.lesson018.task1.model.Cow;
+import home_work.lesson018.task1.model.Dog;
 
 public class Main {
 
@@ -41,17 +41,16 @@ public class Main {
 
     //    Используя поле класса Animal, определяем, какой настоящий класс обрабатываемого объекта
     private static void sound(Animal animal) {
-
-        if (animal.getClass().equals(Cat.class)) ((Cat) animal).meow();
-        else if (animal.getClass().equals(Cow.class)) {
-            ((Cow) animal).moo();
-        } else if (animal.getClass().equals(Dog.class)) {
-            ((Dog) animal).woof();
-        } else {
-            //На случай, если был создан объект Animal, а не наследника.
-            // Или если наследник неизвестен
-            System.out.println("Unknown animal!");
+        switch (animal) {
+            case Cat cat -> cat.meow();
+            case Cow cow -> cow.moo();
+            case Dog dog -> dog.woof();
+            case null, default ->
+                //На случай, если был создан объект Animal, а не наследника.
+                // Или если наследник неизвестен
+                    System.out.println("Unknown animal!");
         }
     }
-}
 
+
+}

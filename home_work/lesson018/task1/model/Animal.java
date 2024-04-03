@@ -1,4 +1,4 @@
-package home_work.lessson018.task1.model;
+package home_work.lesson018.task1.model;
 
 public class Animal {
     //    Поле, которое будет хранить имя класса, чтобы идентифицировать наследника

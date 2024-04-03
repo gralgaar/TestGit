@@ -1,4 +1,4 @@
-package home_work.lessson018.task2.model;
+package home_work.lesson018.task1.model;
 
 public class Cat extends Animal {
     public static final String CAT_CLASS_NAME = "Cat";
