@@ -18,7 +18,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String carNumber;
-        boolean findCar = false; //флаг обозначабщий, что пользователь дал команду искать мащину
         System.out.println("Найти машину по номеру 1-да: ");
         if (sc.nextInt() == 1) {
             sc.nextLine();
