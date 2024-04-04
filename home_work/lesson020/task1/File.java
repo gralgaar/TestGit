@@ -16,4 +16,8 @@ public class File {
     public String toString() {
         return "Файл \"" + this.name + "." + type.getName() + "\" " + this.size + " " + UNITS;
     }
+
+    public String getName() {
+        return this.name;
+    }
 }
