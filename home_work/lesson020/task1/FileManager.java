@@ -25,7 +25,7 @@ public class FileManager {
         }
     }
 
-    public void findFiles(String name) throws AbsentFileExeption {
+    public void findFiles(String name) throws FileNotFoundExeption {
 
         int countFindedFiles = 0;
 
@@ -33,7 +33,7 @@ public class FileManager {
             if (file.getName().contains(name)) countFindedFiles++; //если файл содержит искомое подслово
         }
 
-        if (countFindedFiles == 0) throw new AbsentFileExeption("Отсутствует файл со строкой", name);
+        if (countFindedFiles == 0) throw new FileNotFoundExeption("Отсутствует файл со строкой", name);
 
         File[] findFiles = new File[countFindedFiles];
         int i = 0;
@@ -46,7 +46,7 @@ public class FileManager {
         this.printFiles(findFiles);
     }
 
-    class AbsentFileExeption extends Exception {
+    class FileNotFoundExeption extends Exception {
 
         private String name;
 
@@ -54,7 +54,7 @@ public class FileManager {
             return name;
         }
 
-        public AbsentFileExeption(String message, String name) {
+        public FileNotFoundExeption(String message, String name) {
 
             super(message);
             this.name = name;

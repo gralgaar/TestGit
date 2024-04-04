@@ -18,7 +18,7 @@ public class Main {
         System.out.println();
         try {
             fileManager.findFiles("04kjh");
-        } catch (FileManager.AbsentFileExeption ex) {
+        } catch (FileManager.FileNotFoundExeption ex) {
             System.out.println(ex.getMessage());
             System.out.println(ex.getName());
         }
