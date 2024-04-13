@@ -15,14 +15,17 @@ public class Main {
 
         for (int i = 0; i < split.length; i++) {
             Boolean isUniq = true;
-            for (int j = 0; j < split.length; j++) {
-                if ((i != j) && (split[i].equals(split[j]))) {
+            int j = 0;
+            while (j < i) {
+                if (split[i].equals(split[j])) {
                     isUniq = false;
                     break;
                 }
-
+                j++;
             }
             if (isUniq) uniqueWords++;
+
+
         }
 
         System.out.println(uniqueWords);
