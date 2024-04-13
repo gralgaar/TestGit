@@ -14,7 +14,7 @@ public class Main {
         int uniqueWords = 0;
 
         for (int i = 0; i < split.length; i++) {
-            Boolean isUniq = true;
+            boolean isUniq = true;
             int j = 0;
             while (j < i) {
                 if (split[i].equals(split[j])) {
