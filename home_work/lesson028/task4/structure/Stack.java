@@ -56,7 +56,7 @@ public class Stack<N> {
         }
 
         while (tempNode != null) {
-            str.append(" [" + tempNode + "] ");
+            str.append(" [").append(tempNode).append("] ");
             tempNode = tempNode.getPreviousNode();
         }
         return str.toString();

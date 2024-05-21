@@ -3,7 +3,7 @@ package home_work.lesson028.task4.structure;
 public class Node<N> {
 
     private final N data;
-    private Node<N> previousNode;
+    private final Node<N> previousNode;
 
 
     public Node(N data, Node<N> previousNode) {
