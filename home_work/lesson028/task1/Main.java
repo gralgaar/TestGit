@@ -7,7 +7,7 @@ public class Main {
         Power<Integer> int6 = new Power<>(6);
 
 
-        Power<Double> doubl6 = new Power(6d);
+        Power<Double> doubl6 = new Power<>(6d);
 
         System.out.println(byte6.getPower(6.3));
 
