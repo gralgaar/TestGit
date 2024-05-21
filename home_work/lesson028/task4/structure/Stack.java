@@ -1,6 +1,6 @@
 package home_work.lesson028.task4.structure;
 
-import home_work.lesson028.task3.exception.ElementNotFoundException;
+import home_work.lesson028.task4.exception.ElementNotFoundException;
 
 public class Stack<N> {
     private Node<N> topNode;
@@ -10,7 +10,7 @@ public class Stack<N> {
     }
 
     public void add(N dataToNode) {
-        this.topNode = new Node<N>(dataToNode, this.topNode);
+        this.topNode = new Node<>(dataToNode, this.topNode);
         this.size++;
         //System.out.println("текущая глубина стека " + this.size);
         //System.out.println(this.topNode + "\n");
