@@ -56,4 +56,8 @@ public class CarService {
         }
         return null;
     }
+
+    public Car[] getAllCars() {
+        return this.cars;
+    }
 }

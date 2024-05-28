@@ -32,11 +32,7 @@ public class Main {
 
         System.out.println(service2);
 
-//        System.out.println("\nЗапись в файл");
-//        repository.addCar(cars[0]);
-//        repository.addCar(cars[1]);
-//        repository.addCar(cars[2]);
-//        repository.addCar(cars[3]);
+        repository.saveAll(service2);
 
 
     }

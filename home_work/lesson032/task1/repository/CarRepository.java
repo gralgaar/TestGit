@@ -2,6 +2,7 @@ package home_work.lesson032.task1.repository;
 
 import home_work.lesson032.task1.exception.IllegalAttributeCarException;
 import home_work.lesson032.task1.model.Car;
+import home_work.lesson032.task1.service.CarService;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,6 +36,14 @@ public class CarRepository {
 
             System.out.println(ex.getMessage());
         }
+    }
+
+    public void saveAll(CarService service) {
+        Car[] cars = service.getAllCars();
+        for (Car c : cars) {
+            addCar(c);
+        }
+
     }
 
     public Car[] getCars() {
