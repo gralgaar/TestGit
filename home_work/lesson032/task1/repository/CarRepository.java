@@ -47,14 +47,12 @@ public class CarRepository {
     }
 
     public Car[] getCars() {
-        byte[] buffer = new byte[10000];
 
         String text;
 
         try {
             text = Files.readString(Path.of(this.dirRepository));
             return createCars(text);
-
 
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -115,13 +113,8 @@ public class CarRepository {
 //возвращает из строки днныее. Данный соответствуют полю fieldCarString (model/color/number)
         Pattern pattern = Pattern.compile("(.*" + fieldCarString + ": \\(|\\).*)");
         Matcher matcher = pattern.matcher(carText);
-        String parse = matcher.replaceAll("");
 
-        //System.out.println("parseTextCar: " + parse);
-        return parse;
+        return matcher.replaceAll("");
     }
 
-    static void print(String[] arr) {
-        System.out.println(Arrays.toString(arr));
-    }
 }

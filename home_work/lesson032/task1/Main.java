@@ -1,6 +1,5 @@
 package home_work.lesson032.task1;
 
-import home_work.lesson032.task1.model.Car;
 import home_work.lesson032.task1.repository.CarRepository;
 import home_work.lesson032.task1.service.CarService;
 
