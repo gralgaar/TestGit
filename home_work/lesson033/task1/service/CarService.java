@@ -39,6 +39,8 @@ public class CarService {
 
     @Override
     public String toString() {
+        if (null == this.cars) return "NULL";
+
         StringBuilder str = new StringBuilder();
 
         for (Car car : this.cars) {
@@ -57,6 +59,7 @@ public class CarService {
         }
         return null;
     }
+
 
     public Car[] getAllCars() {
         return this.cars;

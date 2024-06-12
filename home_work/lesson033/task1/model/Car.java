@@ -18,7 +18,8 @@ public class Car {
 
     @Override
     public int hashCode() {
-        int hash = model.hashCode();
+        int hash;
+        hash = model.hashCode();
         hash = 31 * hash + color.hashCode();
         hash = 31 * hash + number.hashCode();
         return hash;

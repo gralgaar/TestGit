@@ -5,8 +5,6 @@ import home_work.lesson033.task1.model.Car;
 import home_work.lesson033.task1.service.CarService;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,10 +23,9 @@ public class CarRepository {
     public void addCar(Car car) {
         String text = formatObjectInText(car); // строка для записи
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(this.dirRepository, true))) {
+        try (FileWriter fw = new FileWriter(this.dirRepository, true)) {
 
-
-            bw.write(text);
+            fw.write(text);
             System.out.println("The file has been written");
         } catch (IOException ex) {
 
@@ -44,17 +41,17 @@ public class CarRepository {
 
     }
 
-    public Car[] getCars() {
+    public void pushCars(CarService service) {
 
-        ArrayList<String> textList = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(this.dirRepository))) {
-
-
-            while ((textList.add(br.readLine()))) {
-                System.out.println(textList.getLast());
+        try (FileReader fileReader = new FileReader(this.dirRepository)) {
+            String textCar;
+            while (!(textCar = nextLine(fileReader)).equals("empty_string")) {
+                //System.out.println(textCar);
+                Car car = createCar(textCar);
+                service.addCar(car);
             }
 
-            return createCars(textList);
+            return;
 
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
@@ -117,6 +114,25 @@ public class CarRepository {
         Matcher matcher = pattern.matcher(carText);
 
         return matcher.replaceAll("");
+    }
+
+    /**
+     * метод извлекает из файла сточку с данными о машине
+     */
+    private static String nextLine(FileReader fileReader) throws IOException {
+        int c;
+        StringBuilder str = new StringBuilder();
+        //while  ((c = fileReader.read()) != -1){
+
+        while ((c = fileReader.read()) != 10 && c != -1) {
+            str.append((char) c);
+        }
+        //}
+        if (str.isEmpty()) {
+            return "empty_string";
+        }
+        return String.valueOf(str);
+
     }
 
 }
