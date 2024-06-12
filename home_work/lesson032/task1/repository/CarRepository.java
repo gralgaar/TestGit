@@ -73,7 +73,10 @@ public class CarRepository {
         return new Car(modelCar, colorCar, numberCar);
     }
 
-    //Метод создаёт машины. На основании данных в переданной строке
+
+    /**
+     * Метод создаёт машины. На основании данных в переданной строке
+     */
     private Car[] createCars(String text) {
 
         //дробим переданный текст на строки. Каждая строка соответствует одной машине
@@ -90,7 +93,9 @@ public class CarRepository {
         return carsObj;
     }
 
-    //метод извлекае из строчки данные о машнине
+    /**
+     * метод извлекает из строчки данные о машнине
+     */
     private String parseTextCar(String carText, int fieldCarInt) {
 
         String fieldCarString = switch (fieldCarInt) {
@@ -109,7 +114,6 @@ public class CarRepository {
             throw new IllegalAttributeCarException();
         }
 
-//возвращает из строки днныее. Данный соответствуют полю fieldCarString (model/color/number)
         Pattern pattern = Pattern.compile("(.*" + fieldCarString + ": \\(|\\).*)");
         Matcher matcher = pattern.matcher(carText);
 
