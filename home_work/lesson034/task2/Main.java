@@ -27,7 +27,6 @@ public class Main {
     private static LocalDateTime stingToDate(String dateText) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-        ;
         LocalDateTime parsedDate = LocalDateTime.parse(dateText, formatter);
         return parsedDate;
     }
